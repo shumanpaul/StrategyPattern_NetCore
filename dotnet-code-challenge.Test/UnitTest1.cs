@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Xunit;
 
 namespace dotnet_code_challenge.Test
@@ -11,7 +12,13 @@ namespace dotnet_code_challenge.Test
         [Fact]
         public void ListHorses_FileNotFoundException()
         {
+            string inputFilePath = "InputFiles/RandomFile.json";
+            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
+                                                                                     new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
 
+            var horsesSortedAscending = "";
+
+            Assert.Equal(expected_horsesSortedAscending, horsesSortedAscending);
         }
 
         /// <summary>
@@ -20,6 +27,13 @@ namespace dotnet_code_challenge.Test
         [Fact]
         public void ListHorses_EmptyFile()
         {
+            string inputFilePath = "InputFiles/RandomFile.json";
+            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
+                                                                                     new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
+
+            var horsesSortedAscending = "";
+
+            Assert.Equal(expected_horsesSortedAscending, horsesSortedAscending);
 
         }
 
@@ -29,6 +43,13 @@ namespace dotnet_code_challenge.Test
         [Fact]
         public void ListHorses_BlankFilePath()
         {
+            string inputFilePath = "InputFiles/RandomFile.json";
+            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
+                                                                                     new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
+
+            var horsesSortedAscending = "";
+
+            Assert.Equal(expected_horsesSortedAscending, horsesSortedAscending);
 
         }
 
@@ -38,6 +59,13 @@ namespace dotnet_code_challenge.Test
         [Fact]
         public void ListHorses_InCorrectFromatJSONFile()
         {
+            string inputFilePath = "InputFiles/RandomFile.json";
+            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
+                                                                                     new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
+
+            var horsesSortedAscending = "";
+
+            Assert.Equal(expected_horsesSortedAscending, horsesSortedAscending);
 
         }
 
@@ -47,6 +75,13 @@ namespace dotnet_code_challenge.Test
         [Fact]
         public void ListHorses_InCorrectFromatXMLFile()
         {
+            string inputFilePath = "InputFiles/RandomFile.json";
+            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
+                                                                                     new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
+
+            var horsesSortedAscending = "";
+
+            Assert.Equal(expected_horsesSortedAscending, horsesSortedAscending);
 
         }
 
@@ -56,6 +91,13 @@ namespace dotnet_code_challenge.Test
         [Fact]
         public void ListHorses_NoHorsesInInputFile()
         {
+            string inputFilePath = "InputFiles/RandomFile.json";
+            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
+                                                                                     new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
+
+            var horsesSortedAscending = "";
+
+            Assert.Equal(expected_horsesSortedAscending, horsesSortedAscending);
 
         }
 
@@ -65,6 +107,13 @@ namespace dotnet_code_challenge.Test
         [Fact]
         public void ListHorses_ValidCase1()
         {
+            string inputFilePath = "InputFiles/RandomFile.json";
+            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
+                                                                                     new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
+
+            var horsesSortedAscending = "";
+
+            Assert.Equal(expected_horsesSortedAscending, horsesSortedAscending);
 
         }
     }
