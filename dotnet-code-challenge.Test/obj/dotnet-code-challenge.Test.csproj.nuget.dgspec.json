@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shuma\\Desktop\\BetEasy\\code-challenge\\dotnet-code-challenge.Test\\dotnet-code-challenge.Test.csproj": {}
+    "D:\\Projects\\BetEasy\\RacingHorses\\dotnet-code-challenge.Test\\dotnet-code-challenge.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shuma\\Desktop\\BetEasy\\code-challenge\\dotnet-code-challenge.Test\\dotnet-code-challenge.Test.csproj": {
+    "D:\\Projects\\BetEasy\\RacingHorses\\dotnet-code-challenge.Test\\dotnet-code-challenge.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shuma\\Desktop\\BetEasy\\code-challenge\\dotnet-code-challenge.Test\\dotnet-code-challenge.Test.csproj",
+        "projectUniqueName": "D:\\Projects\\BetEasy\\RacingHorses\\dotnet-code-challenge.Test\\dotnet-code-challenge.Test.csproj",
         "projectName": "dotnet_code_challenge.Test",
-        "projectPath": "C:\\Users\\shuma\\Desktop\\BetEasy\\code-challenge\\dotnet-code-challenge.Test\\dotnet-code-challenge.Test.csproj",
+        "projectPath": "D:\\Projects\\BetEasy\\RacingHorses\\dotnet-code-challenge.Test\\dotnet-code-challenge.Test.csproj",
         "packagesPath": "C:\\Users\\shuma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shuma\\Desktop\\BetEasy\\code-challenge\\dotnet-code-challenge.Test\\obj\\",
+        "outputPath": "D:\\Projects\\BetEasy\\RacingHorses\\dotnet-code-challenge.Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft\\Xamarin\\NuGet\\",
@@ -32,8 +32,8 @@
         "frameworks": {
           "netcoreapp2.0": {
             "projectReferences": {
-              "C:\\Users\\shuma\\Desktop\\BetEasy\\code-challenge\\dotnet-code-challenge\\dotnet-code-challenge.csproj": {
-                "projectPath": "C:\\Users\\shuma\\Desktop\\BetEasy\\code-challenge\\dotnet-code-challenge\\dotnet-code-challenge.csproj"
+              "D:\\Projects\\BetEasy\\RacingHorses\\dotnet-code-challenge\\dotnet-code-challenge.csproj": {
+                "projectPath": "D:\\Projects\\BetEasy\\RacingHorses\\dotnet-code-challenge\\dotnet-code-challenge.csproj"
               }
             }
           }
@@ -73,14 +73,14 @@
         }
       }
     },
-    "C:\\Users\\shuma\\Desktop\\BetEasy\\code-challenge\\dotnet-code-challenge\\dotnet-code-challenge.csproj": {
+    "D:\\Projects\\BetEasy\\RacingHorses\\dotnet-code-challenge\\dotnet-code-challenge.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shuma\\Desktop\\BetEasy\\code-challenge\\dotnet-code-challenge\\dotnet-code-challenge.csproj",
+        "projectUniqueName": "D:\\Projects\\BetEasy\\RacingHorses\\dotnet-code-challenge\\dotnet-code-challenge.csproj",
         "projectName": "dotnet_code_challenge",
-        "projectPath": "C:\\Users\\shuma\\Desktop\\BetEasy\\code-challenge\\dotnet-code-challenge\\dotnet-code-challenge.csproj",
+        "projectPath": "D:\\Projects\\BetEasy\\RacingHorses\\dotnet-code-challenge\\dotnet-code-challenge.csproj",
         "packagesPath": "C:\\Users\\shuma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shuma\\Desktop\\BetEasy\\code-challenge\\dotnet-code-challenge\\obj\\",
+        "outputPath": "D:\\Projects\\BetEasy\\RacingHorses\\dotnet-code-challenge\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft\\Xamarin\\NuGet\\",
