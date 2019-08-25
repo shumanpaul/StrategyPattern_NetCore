@@ -4,6 +4,9 @@ using System.Text;
 
 namespace dotnet_code_challenge
 {
+    /// <summary>
+    /// Class to hold data of Participant of type Racing Horse
+    /// </summary>
     public class RacingHorse
     {
         /// <summary>

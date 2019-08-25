@@ -1,3 +1,4 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using Xunit;
@@ -16,9 +17,9 @@ namespace dotnet_code_challenge.Test
             List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
                                                                                      new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
 
-            var horsesSortedAscending = "";
+            var horsesSortedAscending = new List<RacingHorse>();
 
-            Assert.Equal(expected_horsesSortedAscending, horsesSortedAscending);
+            CollectionAssert.AreEqual(expected_horsesSortedAscending, horsesSortedAscending, new RacingHorseListComparer());
         }
 
         /// <summary>
@@ -31,9 +32,9 @@ namespace dotnet_code_challenge.Test
             List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
                                                                                      new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
 
-            var horsesSortedAscending = "";
+            var horsesSortedAscending = new List<RacingHorse>();
 
-            Assert.Equal(expected_horsesSortedAscending, horsesSortedAscending);
+            CollectionAssert.AreEqual(expected_horsesSortedAscending, horsesSortedAscending, new RacingHorseListComparer());
 
         }
 
@@ -47,9 +48,9 @@ namespace dotnet_code_challenge.Test
             List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
                                                                                      new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
 
-            var horsesSortedAscending = "";
+            var horsesSortedAscending = new List<RacingHorse>();
 
-            Assert.Equal(expected_horsesSortedAscending, horsesSortedAscending);
+            CollectionAssert.AreEqual(expected_horsesSortedAscending, horsesSortedAscending, new RacingHorseListComparer());
 
         }
 
@@ -63,9 +64,9 @@ namespace dotnet_code_challenge.Test
             List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
                                                                                      new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
 
-            var horsesSortedAscending = "";
+            var horsesSortedAscending = new List<RacingHorse>();
 
-            Assert.Equal(expected_horsesSortedAscending, horsesSortedAscending);
+            CollectionAssert.AreEqual(expected_horsesSortedAscending, horsesSortedAscending, new RacingHorseListComparer());
 
         }
 
@@ -79,9 +80,9 @@ namespace dotnet_code_challenge.Test
             List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
                                                                                      new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
 
-            var horsesSortedAscending = "";
+            var horsesSortedAscending = new List<RacingHorse>();
 
-            Assert.Equal(expected_horsesSortedAscending, horsesSortedAscending);
+            CollectionAssert.AreEqual(expected_horsesSortedAscending, horsesSortedAscending, new RacingHorseListComparer());
 
         }
 
@@ -95,9 +96,9 @@ namespace dotnet_code_challenge.Test
             List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
                                                                                      new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
 
-            var horsesSortedAscending = "";
+            var horsesSortedAscending = new List<RacingHorse>();
 
-            Assert.Equal(expected_horsesSortedAscending, horsesSortedAscending);
+            CollectionAssert.AreEqual(expected_horsesSortedAscending, horsesSortedAscending, new RacingHorseListComparer());
 
         }
 
@@ -111,9 +112,9 @@ namespace dotnet_code_challenge.Test
             List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
                                                                                      new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
 
-            var horsesSortedAscending = "";
+            var horsesSortedAscending = new List<RacingHorse>();
 
-            Assert.Equal(expected_horsesSortedAscending, horsesSortedAscending);
+            CollectionAssert.AreEqual(expected_horsesSortedAscending, horsesSortedAscending, new RacingHorseListComparer());
 
         }
     }
