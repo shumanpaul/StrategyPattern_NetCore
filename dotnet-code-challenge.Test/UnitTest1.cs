@@ -1,3 +1,4 @@
+using dotnet_code_challenge.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;

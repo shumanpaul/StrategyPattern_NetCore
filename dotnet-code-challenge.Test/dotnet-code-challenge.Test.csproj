@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="InputFiles\" />
+    <Folder Include="FeedData\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace dotnet_code_challenge
+namespace dotnet_code_challenge.Model
 {
     /// <summary>
     /// Class to hold data of Participant of type Racing Horse
@@ -22,7 +22,7 @@ namespace dotnet_code_challenge
         /// <summary>
         /// Participant Tags
         /// </summary>
-        public ParticipantTags Tags { get; set; }
+        public RacingParticipantTags Tags { get; set; }
 
         /// <summary>
         /// Price

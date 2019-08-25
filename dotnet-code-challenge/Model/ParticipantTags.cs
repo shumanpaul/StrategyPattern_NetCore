@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace dotnet_code_challenge
+namespace dotnet_code_challenge.Model
 {
-    public class ParticipantTags
+    public class RacingParticipantTags
     {
         private long drawn;
 
