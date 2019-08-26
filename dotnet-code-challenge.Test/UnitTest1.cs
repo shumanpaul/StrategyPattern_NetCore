@@ -14,11 +14,10 @@ namespace dotnet_code_challenge.Test
         [Fact]
         public void ListHorses_FileNotFoundException()
         {
-            string inputFilePath = "InputFiles/RandomFile.json";
-            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
-                                                                                     new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
+            string inputFilePath = "FeedData/RandomFile.json";
+            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>();
 
-            var horsesSortedAscending = new List<RacingHorse>();
+            var horsesSortedAscending = new List<RacingHorse>();           
 
             CollectionAssert.AreEqual(expected_horsesSortedAscending, horsesSortedAscending, new RacingHorseListComparer());
         }
@@ -29,11 +28,12 @@ namespace dotnet_code_challenge.Test
         [Fact]
         public void ListHorses_EmptyFile()
         {
-            string inputFilePath = "InputFiles/RandomFile.json";
-            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
-                                                                                     new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
+            string inputFilePath = "FeedData/RandomFile.json";
+            ContextRacingAnimalOperator contextFileParser = new ContextRacingAnimalOperator(new JSONInputFileParser());
+            //Empty list expected
+            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>();
 
-            var horsesSortedAscending = new List<RacingHorse>();
+            var horsesSortedAscending = contextFileParser.returnListOfHorsesPriceAscending(inputFilePath);
 
             CollectionAssert.AreEqual(expected_horsesSortedAscending, horsesSortedAscending, new RacingHorseListComparer());
 
@@ -43,13 +43,14 @@ namespace dotnet_code_challenge.Test
         /// Empty string passed as file path
         /// </summary>
         [Fact]
-        public void ListHorses_BlankFilePath()
+        public void ListHorses_EmptyFilePath()
         {
-            string inputFilePath = "InputFiles/RandomFile.json";
-            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
-                                                                                     new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
+            string inputFilePath = "";
+            ContextRacingAnimalOperator contextFileParser = new ContextRacingAnimalOperator(new JSONInputFileParser());
+            //Empty list expected
+            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>();
 
-            var horsesSortedAscending = new List<RacingHorse>();
+            var horsesSortedAscending = contextFileParser.returnListOfHorsesPriceAscending(inputFilePath);
 
             CollectionAssert.AreEqual(expected_horsesSortedAscending, horsesSortedAscending, new RacingHorseListComparer());
 
@@ -61,11 +62,12 @@ namespace dotnet_code_challenge.Test
         [Fact]
         public void ListHorses_InCorrectFromatJSONFile()
         {
-            string inputFilePath = "InputFiles/RandomFile.json";
-            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
-                                                                                     new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
+            string inputFilePath = "FeedData/RandomFile.json";
+            ContextRacingAnimalOperator contextFileParser = new ContextRacingAnimalOperator(new JSONInputFileParser());
+            //Empty list expected
+            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>();
 
-            var horsesSortedAscending = new List<RacingHorse>();
+            var horsesSortedAscending = contextFileParser.returnListOfHorsesPriceAscending(inputFilePath);
 
             CollectionAssert.AreEqual(expected_horsesSortedAscending, horsesSortedAscending, new RacingHorseListComparer());
 
@@ -77,12 +79,14 @@ namespace dotnet_code_challenge.Test
         [Fact]
         public void ListHorses_InCorrectFromatXMLFile()
         {
-            string inputFilePath = "InputFiles/RandomFile.json";
-            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
-                                                                                     new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
+            string inputFilePath = "FeedData/RandomFile.json";
+            ContextRacingAnimalOperator contextFileParser = new ContextRacingAnimalOperator(new JSONInputFileParser());
+            
+            //Empty list expected
+            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>();
 
-            var horsesSortedAscending = new List<RacingHorse>();
-
+            var horsesSortedAscending = contextFileParser.returnListOfHorsesPriceAscending(inputFilePath);
+            
             CollectionAssert.AreEqual(expected_horsesSortedAscending, horsesSortedAscending, new RacingHorseListComparer());
 
         }
@@ -93,27 +97,47 @@ namespace dotnet_code_challenge.Test
         [Fact]
         public void ListHorses_NoHorsesInInputFile()
         {
-            string inputFilePath = "InputFiles/RandomFile.json";
-            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
-                                                                                     new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
+            string inputFilePath = "FeedData/NoHorsesInInputFile.json";
+            ContextRacingAnimalOperator contextFileParser = new ContextRacingAnimalOperator(new JSONInputFileParser());
 
-            var horsesSortedAscending = new List<RacingHorse>();
+            //Empty list expected
+            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>();
+
+            var horsesSortedAscending = contextFileParser.returnListOfHorsesPriceAscending(inputFilePath);
 
             CollectionAssert.AreEqual(expected_horsesSortedAscending, horsesSortedAscending, new RacingHorseListComparer());
 
         }
 
         /// <summary>
-        /// Valid Case 1
+        /// JSON Valid Case 1
         /// </summary>
         [Fact]
-        public void ListHorses_ValidCase1()
+        public void ListHorses_JSON_ValidCase1()
         {
-            string inputFilePath = "InputFiles/RandomFile.json";
-            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
-                                                                                     new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
+            string inputFilePath = "FeedData/Wolferhampton_Race1.json";
+            ContextRacingAnimalOperator contextFileParser = new ContextRacingAnimalOperator(new JSONInputFileParser());
+            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "2", Name = "Toolatetodelegate", Price = 4.4 },
+                                                                                     new RacingHorse { Id = "1", Name = "Fikhaar", Price = 10.0 } };
 
-            var horsesSortedAscending = new List<RacingHorse>();
+            var horsesSortedAscending = contextFileParser.returnListOfHorsesPriceAscending(inputFilePath);
+
+            CollectionAssert.AreEqual(expected_horsesSortedAscending, horsesSortedAscending, new RacingHorseListComparer());
+
+        }
+
+        /// <summary>
+        /// XML Valid Case 1
+        /// </summary>
+        [Fact]
+        public void ListHorses_XML_ValidCase1()
+        {
+            string inputFilePath = "FeedData/Caulfield_Race1.xml";
+            ContextRacingAnimalOperator contextFileParser = new ContextRacingAnimalOperator(new XMLInputFileParser());
+            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "872699", Name = "Advancing", Price = 4.2 },
+                                                                                     new RacingHorse { Id = "872442", Name = "Coronel", Price = 12.0 } };
+
+            var horsesSortedAscending = contextFileParser.returnListOfHorsesPriceAscending(inputFilePath);
 
             CollectionAssert.AreEqual(expected_horsesSortedAscending, horsesSortedAscending, new RacingHorseListComparer());
 

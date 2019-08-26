@@ -6,6 +6,9 @@ using System.Text;
 
 namespace dotnet_code_challenge
 {
+    /// <summary>
+    /// Implementaion for Context Strategy Objects
+    /// </summary>
     public class ContextRacingAnimalOperator
     {
         private IInputFileParser _inputFileParser;
@@ -24,7 +27,7 @@ namespace dotnet_code_challenge
 
             listRacingHorses = _inputFileParser.ListofHorses(path);
 
-            return (List < RacingHorse > )listRacingHorses.OrderBy(horse => horse.Price);
+            return listRacingHorses.OrderBy(horse => horse.Price).ToList();
         }
 
     }

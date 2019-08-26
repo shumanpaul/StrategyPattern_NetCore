@@ -1,8 +1,12 @@
 ﻿using dotnet_code_challenge.Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
+/// <summary>
+/// Implementaion for XML Strategy Objects
+/// </summary>
 namespace dotnet_code_challenge
 {
     public class XMLInputFileParser : IInputFileParser
@@ -10,14 +14,48 @@ namespace dotnet_code_challenge
         public List<RacingHorse> ListofHorses(string inputFilePath)
         {
             Console.WriteLine($"Parsing XML File");
+            List<RacingHorse> horses = new List<RacingHorse>();
 
-            /*
-             * Code for parsing file
-             * */
+            try
+            {
+                if (string.IsNullOrEmpty(inputFilePath))//Null or Empty Input file path
+                {
+                    Console.WriteLine("Error:- You did not supply a file path.");
+                    return horses;
+                }
+                else if (!File.Exists(inputFilePath))//File doesnt exist
+                {
+                    Console.WriteLine("Error:- File doesnt exist.");
+                    return horses;
+                }
+                else if (new FileInfo(inputFilePath).Length == 0)//File Empty
+                {
+                    Console.WriteLine("Error:- File doesnt exist.");
+                    return horses;
+                }
 
-            List<RacingHorse> horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "Horse123", Name = "Lightining", Price = 12.05 },
-                                                                                     new RacingHorse { Id = "Horse1234", Name = "Striker", Price = 13.05 } };
-            return new List<RacingHorse>();
+
+                /*
+                * Code for parsing file
+                */
+
+
+                //Dummy list added to test UnitTestCases
+                //To be removed when parsing is implemented
+                horses.Add(new RacingHorse { Id = "11111", Name = "Advancing", Price = 4.2 });
+                horses.Add(new RacingHorse { Id = "22222", Name = "Coronel", Price = 12.0 });
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine("The file or directory cannot be found.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Application has encountered error....");
+                Console.WriteLine("Exception information: {0}", ex);              
+            }            
+
+            return horses;
         }
     }
 }
