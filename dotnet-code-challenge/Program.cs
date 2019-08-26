@@ -15,7 +15,7 @@ namespace dotnet_code_challenge
                 string inputFilePath = args[0];
 
                 //Determine the extension of the filepath
-                var inputFileExtension = Path.GetExtension(inputFilePath);
+                var inputFileExtension = Path.GetExtension(inputFilePath).ToLower();// Make it case insensitive
                 ContextRacingAnimalOperator contextFileParser;
                 List<RacingHorse> horsesSortedAscending = new List<RacingHorse>();
 
@@ -34,7 +34,7 @@ namespace dotnet_code_challenge
                         Console.WriteLine("JSON or XML file is a valid input");
                         break;
                 }
-                if (horsesSortedAscending.Count > 0)
+                if (horsesSortedAscending.Count > 0)//If List has values then print it
                 {
                     Console.WriteLine("Racing Horses Sorted in ascending order as per their Price");
                     Console.WriteLine("_______________________________________");

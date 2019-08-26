@@ -7,6 +7,7 @@ using System.Text;
 namespace dotnet_code_challenge
 {
     /// <summary>
+    /// Follows the Strategy Design Pattern
     /// Implementaion for Context Strategy Objects
     /// </summary>
     public class ContextRacingAnimalOperator
@@ -21,6 +22,11 @@ namespace dotnet_code_challenge
 
         public void SetContextRacingAnimalOperator(IInputFileParser inputFileParser) => _inputFileParser = inputFileParser;
 
+        /// <summary>
+        /// Returns List of Horses in ascending order of price
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public List<RacingHorse> returnListOfHorsesPriceAscending(String path)
         {
             List<RacingHorse> listRacingHorses;

@@ -9,8 +9,14 @@ using System.Text;
 /// </summary>
 namespace dotnet_code_challenge
 {
+
     public class JSONInputFileParser : IInputFileParser
     {
+        /// <summary>
+        /// Returns List of horse objects as parsed from the input file
+        /// </summary>
+        /// <param name="inputFilePath"></param>
+        /// <returns></returns>
         public List<RacingHorse> ListofHorses(string inputFilePath)
         {
             Console.WriteLine($"Parsing XML File");

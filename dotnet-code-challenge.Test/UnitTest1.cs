@@ -8,6 +8,8 @@ namespace dotnet_code_challenge.Test
 {
     public class UnitTest1
     {
+        #region Generic Testcases
+
         /// <summary>
         /// Invalid path or missing file
         /// </summary>
@@ -57,13 +59,14 @@ namespace dotnet_code_challenge.Test
         }
 
         /// <summary>
-        /// JSON Input file corrupt
+        /// Input file doesnt contain any horses or required data
         /// </summary>
         [Fact]
-        public void ListHorses_InCorrectFromatJSONFile()
+        public void ListHorses_NoHorsesInInputFile()
         {
-            string inputFilePath = "FeedData/RandomFile.json";
+            string inputFilePath = "FeedData/NoHorsesInInputFile.json";
             ContextRacingAnimalOperator contextFileParser = new ContextRacingAnimalOperator(new JSONInputFileParser());
+
             //Empty list expected
             List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>();
 
@@ -72,6 +75,10 @@ namespace dotnet_code_challenge.Test
             CollectionAssert.AreEqual(expected_horsesSortedAscending, horsesSortedAscending, new RacingHorseListComparer());
 
         }
+
+        #endregion
+
+        #region XML TestCases
 
         /// <summary>
         /// XML Input file corrupt
@@ -92,14 +99,34 @@ namespace dotnet_code_challenge.Test
         }
 
         /// <summary>
-        /// Input file doesnt contain any horses or required data
+        /// XML Valid Case 1
         /// </summary>
         [Fact]
-        public void ListHorses_NoHorsesInInputFile()
+        public void ListHorses_XML_ValidCase1()
         {
-            string inputFilePath = "FeedData/NoHorsesInInputFile.json";
-            ContextRacingAnimalOperator contextFileParser = new ContextRacingAnimalOperator(new JSONInputFileParser());
+            string inputFilePath = "FeedData/Caulfield_Race1.xml";
+            ContextRacingAnimalOperator contextFileParser = new ContextRacingAnimalOperator(new XMLInputFileParser());
+            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "872699", Name = "Advancing", Price = 4.2 },
+                                                                                     new RacingHorse { Id = "872442", Name = "Coronel", Price = 12.0 } };
 
+            var horsesSortedAscending = contextFileParser.returnListOfHorsesPriceAscending(inputFilePath);
+
+            CollectionAssert.AreEqual(expected_horsesSortedAscending, horsesSortedAscending, new RacingHorseListComparer());
+
+        }
+
+        #endregion
+
+        #region JSON TestCases
+
+        /// <summary>
+        /// JSON Input file corrupt
+        /// </summary>
+        [Fact]
+        public void ListHorses_InCorrectFromatJSONFile()
+        {
+            string inputFilePath = "FeedData/RandomFile.json";
+            ContextRacingAnimalOperator contextFileParser = new ContextRacingAnimalOperator(new JSONInputFileParser());
             //Empty list expected
             List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>();
 
@@ -126,21 +153,6 @@ namespace dotnet_code_challenge.Test
 
         }
 
-        /// <summary>
-        /// XML Valid Case 1
-        /// </summary>
-        [Fact]
-        public void ListHorses_XML_ValidCase1()
-        {
-            string inputFilePath = "FeedData/Caulfield_Race1.xml";
-            ContextRacingAnimalOperator contextFileParser = new ContextRacingAnimalOperator(new XMLInputFileParser());
-            List<RacingHorse> expected_horsesSortedAscending = new List<RacingHorse>{new RacingHorse { Id = "872699", Name = "Advancing", Price = 4.2 },
-                                                                                     new RacingHorse { Id = "872442", Name = "Coronel", Price = 12.0 } };
-
-            var horsesSortedAscending = contextFileParser.returnListOfHorsesPriceAscending(inputFilePath);
-
-            CollectionAssert.AreEqual(expected_horsesSortedAscending, horsesSortedAscending, new RacingHorseListComparer());
-
-        }
+        #endregion
     }
 }
